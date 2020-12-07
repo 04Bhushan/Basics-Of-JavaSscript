@@ -1,0 +1,173 @@
+var a={name:"harry", num:45};
+console.log(a);
+console.log(typeof a);
+console.log(a.name);
+const x=12;
+console.log(x);
+// if we update value of x now it will give error
+
+//but we can update in array
+
+const y=[1,2,4,6];
+
+y[2]= 10;
+
+a["hi"]="bksjbsb bnfsnk";
+console.log(a);
+
+console.log(y);
+
+
+function runloop(){
+  
+  for(let i=0;i<5;i++)
+    {
+      console.log(i);
+    }
+  //here scope is upto whole function not for loop so use let
+  //console.log(i);
+  
+}
+
+//arrow finction
+
+function log(msg){
+  
+  console.log(msg);
+}
+log("hihihihiiiiiiiiiiii!");
+
+var heeee= function (msg){
+  
+  console.log(msg);
+}
+heeee("hihidsbbka,c,!");
+
+// ignore braces in one line function only
+
+const logme = msg => console.log(msg);
+
+logme("heeyyyyyy this is arrow function");
+
+
+const add=(a,b) => a+b;
+console.log(add(2,4));
+
+
+
+//callbacks
+
+
+const dosomething = (somethinglater)=>{
+  console.log("Do Something");
+  somethinglater();
+}
+//here we are passing a function into function, try to avoif "function" keyword here it is not ideal
+dosomething(()=>{
+  console.log("will do something later");
+});
+
+
+///spread operator values
+
+let myarray = [1,23,3,4,56];
+console.log(...myarray);
+const anotherarray =[...myarray,6,7,8,9,236];
+console.log(anotherarray);
+
+//spread op with object
+
+let person={
+  name:"Harry"
+};
+
+let address={
+  street:"xyz"
+};
+let anotherPerson={
+  name:"Shelly",
+  ...person , //replace name values while spreading
+  ...address
+};
+
+console.log(anotherPerson);
+
+//rest operator in function
+
+const adAll = (...arr)=>{
+  return arr.reduce((accumulator,currentValue,iterator)=>{
+    return accumulator+=currentValue;
+  },0);
+}
+
+console.log(adAll(1,2,3,46,75,80));
+
+//class 
+
+class Person{
+  //constructor
+  constructor(){
+    this.name= "John";
+  }
+  
+  printName(){
+    console.log(this.name);
+  }
+}
+
+let person = new Person();
+person.printName();
+
+
+//destructuring
+
+let person={
+  name:"hifd",
+  age; 33,
+  add:"xys"
+};
+
+const {name,age} = person;
+console.log(name,age);
+
+
+//filter function
+
+const num=[2,4,567,32,675,1,5];
+
+const newarray=num.filter((ele,index,self)=>{
+  return ele>3;
+});
+
+
+//map function
+
+console.log(newarray);
+
+const sqnum=num.map((ele,index,self)=>{
+  return ele*ele;
+});
+
+console.log(sqnum)
+            
+   ///reduce function
+            //acc=0
+
+num.reduce((acc,curr,self)=>{
+  return acc+=curr;
+},0); 
+
+console.log(sqnum);
+
+
+
+///destructuring(using req values)
+
+const animal={
+  name:"Dog",
+  breed: "Labra Dog",
+  age:7
+};
+
+const{breed,age}= animal;
+console.log(breed,age);
