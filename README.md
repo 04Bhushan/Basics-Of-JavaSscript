@@ -1,1 +1,1 @@
-# New-Project
+# Javascript Basics
